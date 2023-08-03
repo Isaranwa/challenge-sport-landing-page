@@ -128,14 +128,7 @@
         background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
         max-width: 100%;
       }
-      .about img {
-        border: 1px;
-        border-radius: 10px;
-        width: 300px;
-        height: 300px;
-        margin: 0 auto;
-        display: block;
-      }
+
       .reveal {
         position: relative;
         transform: translateY(150px);
@@ -145,6 +138,17 @@
       .reveal.active {
         transform: translateY(0);
         opacity: 1;
+      }
+      .polaroid {
+        width: 50%;
+        background-color: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom: 25px;
+      }
+      .sub-pic {
+        text-align: center;
+        padding: 10px 20px;
       }
 
       #heading-facts,
@@ -184,10 +188,16 @@
             <li>“Tai” means "to walk."</li>
             <li>“Chuan“ means "path".<a href="#footnote"></a>.</li>
           </ul>
-          <img
-            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/092/058/original/horse_pose.jpg?1691088796"
-            alt="horse stand"
-          />
+          <div class="polaroid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/092/058/original/horse_pose.jpg?1691088796"
+              style="width: 100%"
+              alt="horse stand"
+            />
+            <div class="sub-pic">
+              <p>Horse Stand</p>
+            </div>
+          </div>
         </div>
       </section>
       <hr />
@@ -281,7 +291,7 @@
         Become an expert in this wonderful sport by practising daily! Watch this
         15 min video from
         <a href="https://www.youtube.com/@RealKungFu">youtube</a>and have an
-        amaizing time!
+        amazing time!
       </div>
       <iframe
         class="video"
