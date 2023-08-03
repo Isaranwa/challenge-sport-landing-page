@@ -22,7 +22,7 @@
         max-height: 100%;
         background-repeat: no-repeat;
         background-size: cover;
-        border: 1px solid;
+        border: 1px solid rgb(102, 209, 251);
       }
       h1 {
         text-align: center;
@@ -31,12 +31,25 @@
         margin-bottom: 0;
         font-family: "Dancing Script", cursive;
       }
+      h2,
+      h4 {
+        color: #000;
+        font-family: "Dancing Script", cursive;
+        font-size: 48px;
+      }
       img {
         width: 200px;
         height: 200px;
         margin: 0 auto;
         display: block;
         margin-top: 0;
+      }
+      p,
+      li {
+        padding: 1em;
+        font-size: 20px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        line-height: 1;
       }
       .btn {
         border: 1px;
@@ -48,6 +61,30 @@
         box-shadow: 0.3rem.4rem rgba(black, 0.7);
         background-color: rgb(102, 209, 251);
         color: #000;
+      }
+      .border-style {
+        border: 1px;
+        border-radius: 10px;
+        background-color: rgb(0, 0, 0, 0.54);
+        margin: 10px;
+        color: #fff;
+      }
+      .facts {
+        background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/092/011/original/taichi_img2.jpg?1691065252);
+        background-repeat: no-repeat;
+        background-size: cover;
+        max-width: 100%;
+      }
+      .about {
+        padding: 10px;
+        background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+        max-width: 100%;
+      }
+      .about img {
+        border: 1px;
+        border-radius: 10px;
+        width: 300px;
+        height: 300px;
       }
     </style>
   </head>
@@ -62,11 +99,96 @@
           Home
         </button>
         <button type="button" class="btn btn-dark rounded-pill p-3">
-          About
+          facts
         </button>
         <button type="button" class="btn btn-dark rounded-pill p-3">
-          Classes
+          Routine
         </button>
+      </div>
+    </div>
+    <div class="about" id="#about-art">
+      <section id="intro">
+        <h4>Introduction:</h4>
+        <div class="image d-flex justify-content-between">
+          <ul>
+            <li>"Tai Chi" is an ancient Chinese martial art.</li>
+            <li>“Tai” means "to walk."</li>
+            <li>“Chuan“ means "path".<a href="#footnote"></a>.</li>
+          </ul>
+          <img
+            src="https://t4.ftcdn.net/jpg/04/56/59/09/240_F_456590915_c3bZSxMEjDEGeaO1qBbQBTK1ZT5kUGG5.jpg"
+            alt="horse stand"
+          />
+        </div>
+      </section>
+      <hr />
+      <section id="history">
+        <h4>History:</h4>
+        <ol type="1">
+          <li>
+            The first recorded use of “Tai Chi” dates back to the year 89 CE
+            (C.E.) when the emperor Wu Sheng issued a decree that all men must
+            learn how to perform the traditional Tai Chi technique.
+          </li>
+          <li>
+            In addition to being taught during official ceremonies, Tai Chi has
+            been used as a way to train soldiers since 176 BC.<a
+              href="#footnote"
+            ></a>
+          </li>
+          <li>
+            During World War II, Tai Chi was one of the most popular weapons
+            available to combat forces under Japanese occupation. This weapon
+            was also known by its native name: Kung Fu Panda.
+          </li>
+        </ol>
+      </section>
+    </div>
+    <div class="facts">
+      <h1>Fun facts about Tai Chi☯</h1>
+      <div class="row">
+        <div class="col border-style">
+          <h2>What is in the name?</h2>
+          <p>
+            The name Tai Chi is short for T’ai chi ch’üan (or Tàijí quán).
+            <br />
+            <br />
+            Yeah yeah...I also bit my tongue the first time saying it🤣🤣
+          </p>
+        </div>
+        <div class="col border-style">
+          <h2>Origin of the art?</h2>
+          <p>
+            This style of martial arts originated in China around 6th century
+            BC.
+            <br />
+            <br />
+            <small>I know I know BC? yeah you got it right😉.</small>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col border-style">
+          <h2>Why should I do it?</h2>
+          <p>
+            It is practiced for self-defense as well as for health benefits, and
+            as a form of meditation.
+            <br />
+            <br />
+            <small>Also, there's no better way to learn than by doing!</small>
+          </p>
+        </div>
+        <div class="col border-style">
+          <h2>How many people do this?</h2>
+          <p>
+            Nearly 300 million people in the world practice Tai Chi. Most of
+            these are from china but at least 2.5 million practitioners are from
+            the US.
+            <br />
+            <br />
+            <small>Including me from Africa too😅.</small>
+          </p>
+        </div>
       </div>
     </div>
   </body>
