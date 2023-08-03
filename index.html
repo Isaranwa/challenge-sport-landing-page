@@ -31,7 +31,7 @@
         margin-bottom: 0;
         font-family: "Dancing Script", cursive;
       }
-      h2,
+
       h4 {
         color: #000;
         font-family: "Dancing Script", cursive;
@@ -125,7 +125,7 @@
       }
       .about {
         padding: 10px;
-        background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+        background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
         max-width: 100%;
       }
       .about img {
@@ -136,23 +136,41 @@
         margin: 0 auto;
         display: block;
       }
+      .reveal {
+        position: relative;
+        transform: translateY(150px);
+        opacity: 0;
+        transition: 2s all ease;
+      }
+      .reveal.active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      #heading-facts,
+      h2 {
+        color: #fff;
+        opacity: 0.5;
+      }
     </style>
   </head>
   <body>
-    <div class="content">
-      <h1>Tai Chi</h1>
-      <img
-        class="vertical"
-        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/092/007/original/yingyang.png?1691065021"
-      />
-      <div class="display-btn d-flex justify-content-evenly">
-        <a href="#" class="button" id="classes">Classes</a>
-        <a href="#art-facts" class="button">Facts</a>
-        <a href="#art-routine" class="button">Routine</a>
+    <section>
+      <div class="content reveal">
+        <h1>Tai Chi</h1>
+        <img
+          class="vertical"
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/092/007/original/yingyang.png?1691065021"
+        />
+        <div class="display-btn d-flex justify-content-evenly">
+          <a href="#" class="button" id="classes">Classes</a>
+          <a href="#art-facts" class="button">Facts</a>
+          <a href="#art-routine" class="button">Routine</a>
+        </div>
       </div>
-    </div>
+    </section>
+
     <div class="about">
-      <section id="intro">
+      <section>
         <h4>Introduction:</h4>
         <div class="image d-flex justify-content-between">
           <ul>
@@ -167,7 +185,7 @@
         </div>
       </section>
       <hr />
-      <section id="history">
+      <section>
         <h4>History:</h4>
         <ol type="1">
           <li>
@@ -190,7 +208,7 @@
       </section>
     </div>
     <div class="facts" id="art-facts">
-      <h1>Fun facts about Tai Chi☯</h1>
+      <h1 id="heading-facts">Fun facts about Tai Chi☯</h1>
       <div class="row">
         <div class="col border-style">
           <h2>What is in the name?</h2>
@@ -236,7 +254,7 @@
         </div>
       </div>
     </div>
-    <div class="routine" id="art-routine">
+    <div class="routine reveal" id="art-routine">
       <h1>Tai Chi Daily Routine</h1>
       <div class="font">
         The basic routine consists of three parts: preparatory exercises (called
@@ -270,13 +288,33 @@
         allowfullscreen
       ></iframe>
     </div>
+
     <script>
+      //function for classes button
       function bookClass() {
         let email = prompt("Enter your email");
         alert("Thanks your instructor will be intouch soon😊");
       }
       let button = document.querySelector("#classes");
       button.addEventListener("click", bookClass);
+      //function to animate scroll both up and down
+      function reveal() {
+        let reveals = document.querySelectorAll(".reveal");
+        for (let i = 0; i < reveals.length; i++) {
+          let windowHeight = window.innerHeight;
+          let elementTop = reveals[i].getBoundingClientRect().top;
+          let elementVisible = 150;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          } else {
+            reveals[i].classList.remove("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+
+      // To check the scroll position on page load
+      reveal();
     </script>
   </body>
 </html>
