@@ -37,13 +37,38 @@
         font-family: "Dancing Script", cursive;
         font-size: 48px;
       }
-      img {
+      img.vertical {
         width: 200px;
         height: 200px;
         margin: 0 auto;
         display: block;
         margin-top: 0;
+        -webkit-animation: mover 1s infinite alternate;
+        animation: mover 1s infinite alternate;
       }
+      img .vertical {
+        -webkit-animation: mover 1s infinite alternate;
+        animation: mover 1s infinite alternate;
+      }
+      @-webkit-keyframes mover {
+        0% {
+          transform: translateY(0);
+          opacity: 0.7;
+        }
+        100% {
+          transform: translateY(-20%);
+          opacity: 1;
+        }
+      }
+      @keyframes mover {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-20%);
+        }
+      }
+
       p,
       li {
         padding: 1em;
@@ -51,12 +76,21 @@
         font-family: Georgia, "Times New Roman", Times, serif;
         line-height: 1;
       }
-      .btn {
+
+      .button {
         border: 1px;
         background-color: #000;
         transition: all 200ms ease-in-out;
+        text-decoration: none;
+        color: #fff;
+        padding: 20px;
+        border-radius: 50%;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        margin-left: 30px;
+        margin-right: 30px;
       }
-      .btn:hover {
+      .button:hover {
         cursor: pointer !important;
         box-shadow: 0.3rem.4rem rgba(black, 0.7);
         background-color: rgb(102, 209, 251);
@@ -69,6 +103,20 @@
         margin: 10px;
         color: #fff;
       }
+      .video {
+        border: 1px solid;
+        border-radius: 10px;
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 20px;
+      }
+      .font {
+        font-size: 20px;
+        text-align: center;
+        padding: 10px;
+        margin: 10px;
+      }
+
       .facts {
         background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/092/011/original/taichi_img2.jpg?1691065252);
         background-repeat: no-repeat;
@@ -85,6 +133,8 @@
         border-radius: 10px;
         width: 300px;
         height: 300px;
+        margin: 0 auto;
+        display: block;
       }
     </style>
   </head>
@@ -92,13 +142,16 @@
     <div class="content">
       <h1>Tai Chi</h1>
       <img
+        class="vertical"
         src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/092/007/original/yingyang.png?1691065021"
       />
-      <a href="#">Classes</a>
-      <a href="#">Facts</a>
-      <a href="#">Routine</a>
+      <div class="display-btn d-flex justify-content-evenly">
+        <a href="#" class="button" id="classes">Classes</a>
+        <a href="#art-facts" class="button">Facts</a>
+        <a href="#art-routine" class="button">Routine</a>
+      </div>
     </div>
-    <div class="about" id="#about-art">
+    <div class="about">
       <section id="intro">
         <h4>Introduction:</h4>
         <div class="image d-flex justify-content-between">
@@ -136,7 +189,7 @@
         </ol>
       </section>
     </div>
-    <div class="facts">
+    <div class="facts" id="art-facts">
       <h1>Fun facts about Tai Chi☯</h1>
       <div class="row">
         <div class="col border-style">
@@ -183,6 +236,47 @@
         </div>
       </div>
     </div>
-    <div class="routine">//write about the routine</div>
+    <div class="routine" id="art-routine">
+      <h1>Tai Chi Daily Routine</h1>
+      <div class="font">
+        The basic routine consists of three parts: preparatory exercises (called
+        "preparation"), main body workout ("main") and posture correction or
+        resting position ("posture").<br /><br />
+        Preparatory exercises include warm ups, stretching, breathing techniques
+        and meditation.<br /><br />The main part is called "Main Body Workouts".
+        It includes a series of movements that can be performed with different
+        styles such as kung fu style, tai chi style etc..<br /><br />
+        Posture corrections consist of standing on one leg while holding the
+        other foot to correct for misalignment between legs during movement.
+        This also helps prevent injuries due to improper alignment. Rest
+        positions help you relax after performing a set of moves. You may choose
+        any combination of them depending upon how much time you want to spend
+        doing each move.
+      </div>
+      <div class="font">
+        Become an expert in this wonderful sport by practising daily! Watch this
+        15 min video from
+        <a href="https://www.youtube.com/@RealKungFu">youtube</a>and have an
+        amaizing time!
+      </div>
+      <iframe
+        class="video"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/DmlsB_KOGtM"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <script>
+      function bookClass() {
+        let email = prompt("Enter your email");
+        alert("Thanks your instructor will be intouch soon😊");
+      }
+      let button = document.querySelector("#classes");
+      button.addEventListener("click", bookClass);
+    </script>
   </body>
 </html>
